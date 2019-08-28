@@ -1,0 +1,11 @@
+﻿enable-migrations -StartUpProjectName API -verbose -ProjectName 2.Data
+
+//add entity
+Add-Migration -StartUpProjectName API -verbose -ProjectName 2.Data CreateOrganizationEntity
+
+
+//update database
+Update-database -StartUpProjectName API -verbose -ProjectName 2.Data
+
+//update database to specified target
+Update-database -StartUpProjectName API -verbose -ProjectName 2.Data -TargetMigration:"201801240459221_AddArtReceivedStatus"

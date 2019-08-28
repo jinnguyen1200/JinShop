@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91A689B3-E21A-4FF2-BA98-9958A5584572}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_2.Data</RootNamespace>
+    <AssemblyName>2.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="JinShopContext.cs" />
+    <Compile Include="Mappings\Business\CategoryMapping.cs" />
+    <Compile Include="Mappings\Business\ProductMapping.cs" />
+    <Compile Include="Migrations\201908210701549_InitDB.cs" />
+    <Compile Include="Migrations\201908210701549_InitDB.Designer.cs">
+      <DependentUpon>201908210701549_InitDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908210705201_AddColumnIsActive.cs" />
+    <Compile Include="Migrations\201908210705201_AddColumnIsActive.Designer.cs">
+      <DependentUpon>201908210705201_AddColumnIsActive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908210734243_AddCategory.cs" />
+    <Compile Include="Migrations\201908210734243_AddCategory.Designer.cs">
+      <DependentUpon>201908210734243_AddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908220906597_UpdateFields.cs" />
+    <Compile Include="Migrations\201908220906597_UpdateFields.Designer.cs">
+      <DependentUpon>201908220906597_UpdateFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908260620123_UpdateTest.cs" />
+    <Compile Include="Migrations\201908260620123_UpdateTest.Designer.cs">
+      <DependentUpon>201908260620123_UpdateTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\0.Common\0.Common.csproj">
+      <Project>{0fd19ec0-3863-4e75-955f-0960ba158d3b}</Project>
+      <Name>0.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\1.Core\1.Core.csproj">
+      <Project>{5365D7C9-A0DC-413C-94F4-EA9FC2854710}</Project>
+      <Name>1.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201908210701549_InitDB.resx">
+      <DependentUpon>201908210701549_InitDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908210705201_AddColumnIsActive.resx">
+      <DependentUpon>201908210705201_AddColumnIsActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908210734243_AddCategory.resx">
+      <DependentUpon>201908210734243_AddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908220906597_UpdateFields.resx">
+      <DependentUpon>201908220906597_UpdateFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908260620123_UpdateTest.resx">
+      <DependentUpon>201908260620123_UpdateTest.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
